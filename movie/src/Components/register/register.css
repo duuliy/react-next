@@ -1,0 +1,97 @@
+.Register{
+    width: 100%;
+    border:1px solid transparent;
+    background: url("/images/register.png") no-repeat center center;
+    background-size: cover;
+    padding-bottom:48%;
+}
+.back_top a{
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+.back_top{
+    position: absolute;
+    top:2%;
+    left:2%;
+    color:#f5f5f5;
+    font-size: 32px;
+}
+.ct_header{
+    width: 80%;
+    height: 300px;
+    margin-left:10%;
+    margin-top:50%;
+}
+.ct_header input{
+    background: transparent;
+    border:none;
+    border-bottom:1px solid #8e8e8e;
+    width:70%;
+    height: 25px;
+    outline: none;
+    padding-left: 19%;
+    margin-top:8%;
+    margin-left:5%;
+}
+input::-webkit-input-placeholder{
+    color:#373737;
+}
+.phone,.yanzheng,.password{
+    position: relative;
+}
+label{
+    position: absolute;
+    left:5%;
+    top:50%;
+    font-weight: 500;
+}
+.yanzheng button{
+    width: 25vw;
+    background: none;
+    border: none;
+    border-left:2px solid #5a5a5a;
+    border-radius: 0;
+    padding:2px;
+    position: absolute;
+    left:62%;
+    top:50%;
+    outline: none;
+}
+.agreement{
+    margin-top: 3%;
+    width: 90%;
+    text-align: left;
+    padding-left:15px;
+    font-size: 15px;
+}
+.agreement img{
+    width: 5vw;
+    vertical-align: middle;
+}
+.agreement span{
+    margin-left:3%;
+}
+.register{
+    width: 100%;
+    margin-top:10%;
+}
+.register button{
+    background: grey;
+    position: relative;
+    border:none;
+    outline: none;
+    color: white;
+    width: 80%;
+    padding:3%;
+    margin-left:10%;
+    border-radius: 18px;
+}
+.bottom{
+    font-weight: 600;
+    margin-top:30%;
+}
+.bottom a{
+    color: #4695d5;
+}

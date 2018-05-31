@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('/font/proson/iconfont.woff');
+}
+@font-face {
+    font-family: 'iconfont2';
+    src: url('/font/common/iconfont.woff');
+}
+.top{
+    font-family: 'iconfont';
+    color: #dedede;
+    background: url("/images/1.png") no-repeat;
+    background-position: 30% 40%;
+    height: 270px;
+    /*border: 1px solid red;*/
+    overflow: hidden;
+}
+.head{
+    /*border: 1px solid red;*/
+    height: 182px;
+    width: 100%;
+    position: relative;
+    margin-top: 35px;
+}
+.head>p{
+    margin-top: -10px;
+    font-size: 12px;
+}
+.mbtn{
+    width: 100%;
+    margin-top: 10px;
+}
+.head>img:nth-of-type(1){
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 1px solid #dadada;
+}
+.head>img:nth-of-type(2){
+    width: 25px;
+    height: 25px;
+    top: 55px;
+    left: 200px;
+    position: absolute;
+    /*border-radius: 80px;*/
+    /*border: 1px solid #dadada;*/
+}
+toptwo{
+    width: 100%;
+    position: relative;
+
+    height: 50px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.listt{
+    width: 32.8%;
+    /*position: absolute;*/
+    height: 51px;
+    display: inline-block;
+    float: left;
+    border: 1px solid rgba(214, 214, 214, 0.49);
+}
+.listt>p:nth-of-type(1){
+    line-height: 1px;
+    font-size:20px;
+}
+.listt>p:nth-of-type(2){
+line-height: 1px;
+    font-size: 12px;
+    color: #979797;
+}
+.mySinglee{
+   border-bottom: 1px solid #bfbfbf;
+    color: #5c5c5c;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    /*justify-content:space-between;*/
+}
+.mySinglee>p>span:nth-of-type(1){
+    font-family: 'iconfont';
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.mySinglee>p>span:nth-of-type(2){
+    font-family: 'iconfont2';
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+}

@@ -1,0 +1,27 @@
+.arrow{
+    margin-top: 5px;
+}
+.title{
+    position: relative;
+}
+.line{
+    display: inline-block;
+    border-top: 1px solid #dfdfdf;
+    width: 30px;
+    position: absolute;
+   left:3%;
+}
+.one{
+    bottom: 8px;
+    margin-left: 130px;
+}
+.two{
+    margin-left: 211px;
+    bottom: 8px;
+}
+.title>p{
+    margin-left:5%;
+}
+.content{
+    margin-top: -5px;
+}

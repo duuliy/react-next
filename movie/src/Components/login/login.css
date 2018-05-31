@@ -1,0 +1,111 @@
+.Login{
+    width: 100%;
+    border:1px solid transparent;
+    background: url("/images/login.png") no-repeat;
+    background-size: cover;
+    padding-bottom:13%;
+}
+/*用户名密码*/
+.form{
+    width: 60%;
+    margin: 0 auto;
+    margin-left:22%;
+    margin-top:68%;
+    padding-bottom:11%
+}
+.form input{
+    display: block;
+    margin-top:4%;
+    background: transparent;
+    border:none;
+    width: 87%;
+    height: 4vh;
+    border-bottom:1px solid #7c7c7c;
+    outline: none;
+    padding-left:15%
+}
+.form input:nth-of-type(2){
+   margin-top:6%;
+}
+input::-webkit-input-placeholder{
+    color:black;
+    font-weight: 500;
+    font-size: 14px;
+}
+/*记住密码板块*/
+.remenber{
+    width: 100%;
+    margin-top:5%;
+    font-size: 15px;
+    font-weight: 500;
+}
+.outer{
+    zoom:1
+}
+.remenber:after{
+    width: 0;
+    height: 0;
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+.rb_left{
+    float: left;
+    width: 50%;
+}
+.rb_left img{
+    width: 3vh;
+    height: 3vh;
+    vertical-align: middle;
+    margin-left:-95px;
+}
+.rb_left label{
+    margin-left:25%;
+    margin-top:2%;
+}
+.rb_right{
+    float: right;
+}
+/*登录*/
+.login{
+  width: 100%;
+    margin-top:12%;
+}
+.login button{
+    width: 100%;
+    border:none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bolder;
+    background: #2387da;
+    padding:4%;
+    text-align: center;
+    outline: none;
+}
+@font-face{
+    font-family: "Login";
+    src: url("/font/login/iconfont.woff");
+}
+.third_party{
+    width: 100%;
+    margin-top:15%;
+    display: flex;
+    justify-content: space-around;
+}
+.iconfont{
+    display: inline-block;
+    font-family: "Login";
+    font-size: 5vh;
+    color:#1d1d1d
+}
+.bottom{
+    margin-top:22%;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left:18%;
+}
+.bottom .join{
+    color:#2387da;
+    cursor: pointer;
+}

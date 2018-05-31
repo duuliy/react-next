@@ -1,0 +1,52 @@
+.cardbox{
+    width: 100%;
+    height: 500px;
+}
+.cardhead{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    margin-bottom: 50px;
+    background-color: #1b1b1b;
+    color: white;
+}
+.cardhead>div{
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+}
+.cardhead img{
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+}
+.cardcontent{
+    width: 90%;
+    height: 490px;
+    margin: 0 auto;
+    padding: 0 5px;
+    color: #474747;
+    box-shadow: 5px 5px 5px #cecece;
+}
+.cardcontent>img{
+     width: 90%;
+     height: 330px;
+ }
+.cardcontent>p:nth-of-type(3){
+    text-align: right;
+}
+.bomicon{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.bomicon img{
+    width: 35px;
+    height: 35px;
+}

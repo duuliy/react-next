@@ -1,0 +1,51 @@
+.header{
+    width:100%;
+    height: 60px;
+    background-color: #1b1b1b;
+    /*border: 1px solid red;*/
+    position: fixed;
+}
+.header>img{
+    position: absolute;
+    top: -55px;
+    left: -185px;
+    /*z-index: 999;*/
+
+}
+.el-icon-arrow-left{
+    font-size: 18px;
+    color: #e7e7e7;
+    margin-top: 22px;
+    margin-left: -85%;
+}
+.mybody{
+    background: url("/images/allYD.png");
+    width: 100% ;
+    background-position: 40% 18%;
+    /*-webkit-transform: scale(0.5,0.5);*/
+    /*position: relative;*/
+    height: 667px;
+    color: #dfdfdf;
+}
+.warp{
+    width: 100%;
+    height: 91%;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.64);
+    display: flex;
+    flex-direction:column;
+}
+
+Fiyarr{
+
+    overflow: hidden;
+    margin-top: 10px;
+}
+/*classfiy{*/
+    /*position: absolute;*/
+    /*z-index: 99999;*/
+    /*color: black;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+/*}*/
