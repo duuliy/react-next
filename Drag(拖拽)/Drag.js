@@ -48,7 +48,7 @@ const Drag = ( { title,visible } ) => {
 export default Drag;
 
 
-//页面上使用方法
+//页面上使用 方法
 // import { Drag } from '../../../components/index.js';
 {/* <Modal
           title={<Drag title={`title`} visible={deleteVisible}></Drag>}
