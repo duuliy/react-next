@@ -20,21 +20,61 @@ function useFriendStatus(friendID) {
     });
   
     return isOnline;
+}
+
+function useWindowWidth(friendID) {
+  const [width, setWidth] = useState(window.innerWidth);  //钩子函数
+
+  useEffect(() => {
+    const handReseze=()=>setWidth(window.innerWidth)
+    window.addEventListener('resize',handReseze)
+
+    return () => {
+      window.removeEventListener('resize',handReseze)
+      //这里面取消订阅，相当于componentWillUnmount
+      // ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  return width;
+}
+
+function useDocumentTitle(title){
+  useEffect(() => { 
+    document.title = title;
+  });
+}
+
+function useFormInput(initalValue){
+  const [value, setValue] = useState(initalValue);  //钩子函数
+
+  function handleChange(e){
+    setValue(e.target.value)
   }
+
+  return{
+    value,
+    onChange:handleChange
+  }
+}
 
 function Example(props) {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);  //钩子函数
   const id=555
   const isOnline = useFriendStatus(id);
+  const width =useWindowWidth()
+  const name = useFormInput('Mary')
+  const surname = useFormInput('Poppins')
+  useDocumentTitle(name.value+''+surname.value)
   // const locale = useContext(localeContext)
 
 
   // 类似于 componentDidMount 和 componentDidUpdate:
   useEffect(() => { //每次渲染后执行,使用副作用钩子  可以多个
     // 使用浏览器API更新文档标题
-    document.title = `clicked ${count} times`;
-
+    console.log(666)
+    // document.title = `clicked ${count} times`;
     return () => {
       //这里面取消订阅，相当于componentWillUnmount
       // ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
@@ -49,6 +89,11 @@ function Example(props) {
     <div>
       <p>You clicked {count} times</p>
       {/* {locale} */}
+      宽度：{width}
+      <input {...name}/>
+      <br/>
+      <input {...surname}/>
+      <br/>
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
