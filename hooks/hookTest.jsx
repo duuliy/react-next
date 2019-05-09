@@ -1,5 +1,6 @@
-import React,{ useState,useEffect,useContext } from 'react';
+import React,{ useState,useEffect,useContext,useReducer } from 'react';
 // import {localeContext} from './context'
+import { UserProvider, UserContext } from './UserContext' 
 
 
 //1.只能在顶层调用钩子。不要在循环，控制流和嵌套的函数中调用钩子。
@@ -58,6 +59,50 @@ function useFormInput(initalValue){
   }
 }
 
+const Pannel = () => {
+  const { username, handleChangeUsername } = useContext(UserContext) // 3
+  return (
+    <div>
+      <div>user: {username}</div>
+      <input onChange={e => handleChangeUsername(e.target.value)} />
+    </div>
+  )
+}
+
+const Form = () => <Pannel></Pannel>
+
+const initialState = {count: 0};
+
+function reducer(state, action) { //很像react-redux,但是没有中间件了
+  switch (action.type) {
+    case 'reset':
+      return initialState;
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+  }
+}
+
+function Counter({initialCount}) {
+  const [state, dispatch] = useReducer(
+    reducer, 
+    initialState,
+    // {type: 'reset', payload: initialCount}, //第三个参数目前还是提案
+  );
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'reset'})}>
+        Reset
+      </button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+    </>
+  );
+}
+
+
 function Example(props) {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);  //钩子函数
@@ -89,6 +134,11 @@ function Example(props) {
     <div>
       <p>You clicked {count} times</p>
       {/* {locale} */}
+      <UserProvider>
+        <Form></Form>
+      </UserProvider>
+
+       <br/>
       宽度：{width}
       <input {...name}/>
       <br/>
@@ -97,6 +147,10 @@ function Example(props) {
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
+
+      <br/>
+
+      <Counter/>
     </div>
   );
 }
@@ -109,6 +163,7 @@ function Example(props) {
 //useRef 保存引用值
 //useImperativeHandle 透传 Ref
 //useLayoutEffect 同步执行副作用
+//useMutationEffect 但它在React执行其DOM突变的同一阶段同步触发，然后更新兄弟组件。使用它来执行自定义DOM突变。useEffect尽可能优先选择标准，以避免阻止视觉更新
 //缺点：但是当下 v16.8 的版本中，还无法实现 getSnapshotBeforeUpdate 和 componentDidCatch 这两个在类组件中的生命周期函数。
 
 export default Example;
