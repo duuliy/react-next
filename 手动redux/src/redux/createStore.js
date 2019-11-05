@@ -1,0 +1,33 @@
+/*增加一个参数 reducer*/
+export default function (reducer, initState) {
+  let state = initState;
+  let listeners = [];
+
+  function subscribe(listener) {
+    listeners.push(listener);
+  }
+
+  function dispatch(action) {
+    /*请按照我的计划修改 state*/
+    state = reducer(state, action);
+    for (let i = 0; i < listeners.length; i++) {
+      const listener = listeners[i];
+      listener();
+    }
+  }
+
+  function getState() {
+    return state;
+  }
+  /* 注意！！！只修改了这里，用一个不匹配任何计划的 type，来获取初始值 */
+  //很巧妙
+  dispatch({
+    type: Symbol()
+  });
+
+  return {
+    subscribe,
+    dispatch,
+    getState
+  }
+}
