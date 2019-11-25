@@ -1,6 +1,6 @@
 let initState = {
-    name: '前端九部',
-    description: '我们都是前端爱好者！',
+    name: 'redux',
+    description: '我喜欢redux源码！',
   }
   
   export default function InfoReducer(state, action) {

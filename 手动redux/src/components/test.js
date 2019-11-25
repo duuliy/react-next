@@ -5,7 +5,6 @@ class ThemedButton extends React.Component {
   render() {
     let props = this.props;
     let theme = this.context;
-    console.log(this.context)
     return (
       <button
         {...props}
