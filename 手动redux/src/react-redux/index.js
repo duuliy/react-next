@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import storeShape from '../utils/storeShape';
-import shallowEqual from '../utils/shallowEqual';
+import storeShape from '../utils/storeShape'; //将 store 的 PropType 规则提取出来，放在 utils/storeShape.js 文件中。
+import shallowEqual from '../utils/shallowEqual'; //通用的浅比较函数
 /**
  * connect()的实现  核心代码
  * mapStateToProps 缺省时，不关联state
