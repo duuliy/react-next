@@ -1,22 +1,13 @@
-.cc{
-    button{
+@import "../styles/themes.less";
+@import "../styles/app.less";
+@import "../styles/mixins.less";
+
+
+@prefixCls : cooks-btn;
+
+.@{prefixCls} {
+    &.@{prefixCls}[type='cc']{
         color: red;
     }
+
 }
-
-// @prefixCls : cook-btn;
-
-// .@{prefixCls} {
-// //   display: flex;
-// //   flex-wrap: wrap;
-
-// //   &.align-left {
-// //     justify-content: flex-start;
-// //   }
-// //   &.align-right {
-// //     justify-content: flex-end;
-// //   }
-// //   &.align-center {
-// //     justify-content: center;  
-// //   }
-// }

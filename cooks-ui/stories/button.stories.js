@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Button } from '@storybook/react/demo';
 import Button from '../components/button';
-import '../components/button/style.less';
+// import '../components/button/style.less';
 import { storiesOf } from '@storybook/react';
 
 export default { title: 'Button' };
