@@ -1,0 +1,13 @@
+
+@keyframes ripple {
+    from {
+      transform: translate(-50%, -50%) scale(0);
+      /**由于我们默认写了变换属性，所以这里要补上translate(-50%,-50%)，不然就会被替换了**/
+      background: rgba(0, 0, 0, .25);
+    }
+  
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      background: transparent;
+    }
+  }

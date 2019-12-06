@@ -1,9 +1,47 @@
+@import "./themes.less";
+@import "./animation.less";
+
 .clearfix() {
-    &::before,
-    &::after {
-      clear: both;
-      content: "";
-      display: table;
-      zoom: 1;
-    }
+
+  &::before,
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+    zoom: 1;
   }
+}
+
+.btn {
+  background-color: white;
+  min-width: @button-default-width;
+  height: @button-default-height;
+  line-height: 100%;
+  font-size: @button-default-font-size;
+  padding: @button-default-padding;
+  border:1px solid @default-color;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: .3s;
+  border-radius: 5px;
+  :after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    padding-top: 100%;
+    background: transparent;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  :hover{
+    opacity: @button-disabled-opacity;
+  }
+  :active:after{
+    animation: ripple .3s;
+  }
+}

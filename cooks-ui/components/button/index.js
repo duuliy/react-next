@@ -1,5 +1,6 @@
-
-import React, { PureComponent } from 'react'
+import React, {
+  PureComponent
+} from 'react'
 import './style.less'
 import PropTypes from 'prop-types'
 import cls from 'classnames'
@@ -16,51 +17,90 @@ const types = {
   default: 'default',
   warning: 'warning',
   success: 'success',
-  error: 'error',
+  danger: 'danger',
   info: 'info',
-  disabled: 'disabled'
+  error: 'error'
 }
 
-export default class Button extends PureComponent{
-    constructor(props){
-        super(props)
-        this.state={
-            prefixCls: "cooks-btn"
-        }
+export default class Button extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      prefixCls: "cooks-btn"
     }
-
-    static defaultProps = {
-        href: "",
-        type: types.default,
-        htmlType: "button",
-        size: sizes.default,
-        loading: false,
-        block: false,
-        disabled: false,
-        ghost: false,
-        hollow: false,
-        dashed: false,
-        circle: false,
-        plain: false
-      }
-
-    static propTypes = {
-        block: PropTypes.bool,
-        hollow: PropTypes.bool,
-        loading: PropTypes.bool,
-        disabled: PropTypes.bool,
-        dashed: PropTypes.bool,
-        circle: PropTypes.bool,
-        plain: PropTypes.bool,
-        htmlType: PropTypes.string,
-        href: PropTypes.string,
-        ghost:PropTypes.bool,
-        type: PropTypes.oneOf(Object.values(types)),
-        size: PropTypes.oneOf(Object.values(sizes))
-    }
-
-  render(){
-    const {children}=this.props
-    return <button className={this.state.prefixCls} type={'cc'}>{children}</button>
   }
+
+  static defaultProps = {
+    href: "",
+    type: types.default,
+    htmlType: "button",
+    size: sizes.default,
+    loading: false,
+    disabled: false,
+    ghost: false,
+  }
+
+  static propTypes = {
+    onClick:PropTypes.func,
+    loading: PropTypes.bool,
+    disabled: PropTypes.bool,
+    htmlType: PropTypes.string,
+    href: PropTypes.string,
+    ghost: PropTypes.bool,
+    type: PropTypes.oneOf(Object.values(types)),
+    size: PropTypes.oneOf(Object.values(sizes))
+  }
+
+  handleClick = e => {
+    const { onClick,disabled } = this.props;
+
+    if (!disabled&&onClick) (onClick )(e);
+    
+  };
+
+  renderButton = () => {
+    const {prefixCls}=this.state
+    const {
+      children,
+      type,
+      className,
+      disabled,
+      block,
+      size,
+      htmlType
+    } = this.props
+
+    let sizeCls=''
+    switch (size) {
+      case 'large':
+        sizeCls = 'lg';
+        break;
+      case 'small':
+        sizeCls = 'sm';
+        break;
+      default:
+        break;
+    }
+
+    const classes=cls(prefixCls, className, {
+      [`${prefixCls}-${type}`]: Object.values(types).includes(type),
+      [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-${sizeCls}`]: sizeCls
+    })
+
+    return <button 
+            type={htmlType}
+            className = {classes} 
+            onClick={this.handleClick}
+           > 
+           <span>{children}</span> 
+          </button>
+
+  }
+
+  render() {
+
+    return this.renderButton()
+  }
+
 }

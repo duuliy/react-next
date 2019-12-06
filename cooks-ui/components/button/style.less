@@ -6,8 +6,59 @@
 @prefixCls : cooks-btn;
 
 .@{prefixCls} {
-    &.@{prefixCls}[type='cc']{
-        color: red;
+    .btn;
+    .cooks-btn-type(@color){
+        background-color:@color;
+        color: white;        
+    }
+
+    &.@{prefixCls}-lg {
+        font-size: @button-large-font-size;
+        padding: @button-large-padding;
+        height: @button-large-height;
+    }
+
+    &.@{prefixCls}-sm {
+        font-size: @button-small-font-size;
+        padding: @button-small-padding;
+        height: @button-small-height;
+    }
+
+    &.@{prefixCls}-primary {
+        .cooks-btn-type(@primary-color);
+    }
+
+    &.@{prefixCls}-warning {
+        .cooks-btn-type(@warning-color);
+    }
+
+    &.@{prefixCls}-success {
+        .cooks-btn-type(@success-color);
+    }
+
+    &.@{prefixCls}-danger {
+        .cooks-btn-type(@danger-color);
+    }
+
+    &.@{prefixCls}-info {
+        .cooks-btn-type(@info-color);
+    }
+
+    &.@{prefixCls}-error {
+        .cooks-btn-type(@disabled-color);
+        color:@disabled-color-font;
+    }
+
+    &.@{prefixCls}-disabled {
+        .cooks-btn-type(@disabled-color);
+        color:@disabled-color-font;
+        cursor: not-allowed;
+        :hover{
+            opacity: 1;
+        }
+        :active:after{
+            animation: none;
+          }
     }
 
 }
