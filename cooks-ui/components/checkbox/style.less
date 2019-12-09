@@ -150,5 +150,32 @@
         .@{prefixCls}-wrapper:hover &::after {
             visibility: hidden;
         }
+
+        .@{prefixCls}-indeterminate .@{prefixCls}-inner::after {
+            background-color: rgba(0,0,0,.3);
+            border-color: @disabled-color;
+          }
     }
+
+    // 半选状态
+  &-indeterminate {
+    .@{prefixCls}-inner {
+      background-color: @component-background;
+      border-color: @border-color-base;
+    }
+    .@{prefixCls}-inner::after {
+      @indeterminate-width: @checkbox-size - 8px;
+      @indeterminate-height: @checkbox-size - 8px;
+
+      top: 50%;
+      left: 50%;
+      width: @indeterminate-width;
+      height: @indeterminate-height;
+      background-color: @checkbox-color;
+      border: 0;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      content: ' ';
+    }
+  }
 }
