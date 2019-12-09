@@ -1,0 +1,154 @@
+@import "../styles/themes.less";
+@import "../styles/app.less";
+@import "../styles/mixins.less";
+
+@prefixCls : cooks-checkbox;
+
+.@{prefixCls} {
+    font-size: @font-size;
+    color: @font-color;
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: sub;
+    white-space: nowrap;
+    position: relative;
+
+    &-inner {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        width: @checkbox-size;
+        height: @checkbox-size;
+        background-color: @checkbox-check-color;
+        border: @checkbox-border-width @border-style-base @border-color-base;
+        border-radius: @border-radius-sm;
+        // Fix IE checked style
+        border-collapse: separate;
+        transition: all 0.3s;
+
+        &::after {
+            @check-width: (@checkbox-size / 14) * 5px;
+            @check-height: (@checkbox-size / 14) * 8px;
+
+            position: absolute;
+            top: 50%;
+            left: 22%;
+            display: table;
+            width: @check-width;
+            height: @check-height;
+            border: 2px solid @checkbox-check-color;
+            border-top: 0;
+            border-left: 0;
+            transform: rotate(45deg) scale(0) translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.1s @ease-in-back, opacity 0.1s;
+            content: ' ';
+        }
+    }
+
+    &-wrapper {
+        .reset-component;
+        display: inline-block;
+        line-height: unset;
+        cursor: pointer;
+
+        &.@{prefixCls}-wrapper-disabled {
+            cursor: not-allowed;
+        }
+
+        &+& {
+            margin-left: 8px;
+        }
+
+        // 选中状态
+        &-checked .@{prefixCls}-inner::after {
+            position: absolute;
+            display: table;
+            border: 2px solid @checkbox-check-color;
+            border-top: 0;
+            border-left: 0;
+            transform: rotate(45deg) scale(1) translate(-50%, -50%);
+            opacity: 1;
+            transition: all 0.2s @ease-out-back 0.1s;
+        }
+
+        &-checked {
+            .@{prefixCls}-inner {
+                background-color: @checkbox-color;
+                border-color: @checkbox-color;
+            }
+        }
+    }
+
+    &-input {
+        box-sizing: border-box;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+
+
+
+    &-wrapper:hover &-inner,
+    &:hover &-inner,
+    &-input:focus+&-inner {
+        border-color: @checkbox-color;
+    }
+
+    &-wrapper-disabled {
+        cursor: not-allowed;
+        color:@disabled-color-font;
+
+        .@{prefixCls} {
+            .@{prefixCls}-inner {
+                background-color:@disabled-color;
+                border-color: @disabled-color;
+                &::after {
+                    border-color:@disabled-color-font;
+                }
+            }
+        }
+
+        .@{prefixCls}-wrapper-checked {
+            .@{prefixCls}-wrapper-inner::after {
+                border-color: @disabled-color;
+                animation-name: none;
+            }
+        }
+
+        .@{prefixCls}-input {
+            cursor: not-allowed !important;
+
+        }
+
+        .@{prefixCls}-wrapper {
+            background-color: @input-disabled-bg;
+            border-color: @border-color-base  !important;
+
+            &::after {
+                border-color: @input-disabled-bg;
+                border-collapse: separate;
+                animation-name: none;
+            }
+        }
+
+        &+span {
+            color: @disabled-color;
+            cursor: not-allowed;
+        }
+
+        // Not show highlight border of checkbox when disabled
+        &:hover::after,
+        .@{prefixCls}-wrapper:hover &::after {
+            visibility: hidden;
+        }
+    }
+}

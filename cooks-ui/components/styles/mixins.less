@@ -2,15 +2,17 @@
 @import "./animation.less";
 
 .clearfix() {
-
+  zoom: 1;
   &::before,
   &::after {
-    clear: both;
-    content: "";
     display: table;
-    zoom: 1;
+    content: '';
+  }
+  &::after {
+    clear: both;
   }
 }
+
 
 .btn {
   background-color: white;
@@ -44,4 +46,17 @@
   :active:after{
     animation: ripple .3s;
   }
+}
+
+
+.reset-component() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: @text-color;
+  font-size: @font-size-base;
+  font-variant: @font-variant-base;
+  line-height: @line-height-base;
+  list-style: none;
+  font-feature-settings: @font-feature-settings-base;
 }
