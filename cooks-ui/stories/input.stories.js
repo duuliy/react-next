@@ -21,21 +21,22 @@ import {
 } from '../components/icon'
 import { storiesOf } from '@storybook/react'
 
+const inputOnChange = (e) => {
+  console.log(e.target.value)
+}
+
 storiesOf('input and icon', module)
   .add('input',
-    ()=>(
+    () => (
       <div>
-        <h2>输入框</h2>
-        <Input placeholder='666'/>
-        <h2>密码框</h2>
-        <Input type='password'/>
-        <h2>只读框</h2>
-        <Input readonly placeholder='88889' />
-
+        <Input onChange={inputOnChange} placeholder="事件框" style={{ width: 500 }} />
+        <Input type='password' placeholder="请输入密码" style={{ width: 500 }} />
+        <Input readonly defaultValue={'只读框'} style={{ width: 500 }} />
+        <Input disabled placeholder="禁用" style={{ width: 500 }} />
       </div>
     )
   ).add('icon',
-    ()=>(
+    () => (
       <div>
         <InfoIcon />
         <LoadingIcon />
