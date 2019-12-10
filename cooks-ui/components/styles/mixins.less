@@ -60,3 +60,95 @@
   list-style: none;
   font-feature-settings: @font-feature-settings-base;
 }
+
+// Placeholder text
+.placeholder(@color: @input-placeholder-color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+
+  &:placeholder-shown {
+    text-overflow: ellipsis;
+  }
+}
+
+// == when hoverd
+.hover(@color: @input-hover-border-color) {
+  border-color: @color;
+  border-right-width: @border-width-base !important;
+}
+
+// input status
+// == when focus or actived
+.active(@color: @outline-color) {
+  border-color: rgba(0,0,0,.3);
+  border-right-width: @border-width-base !important;
+  outline: 0;
+  box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@color, 20%);
+}
+
+.disabled() {
+  color: @disabled-color;
+  background-color: @input-disabled-bg;
+  cursor: not-allowed;
+  opacity: 1;
+
+  &:hover {
+    .hover(@input-border-color);
+  }
+}
+
+
+.input() {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: @input-height-base;
+  padding: @input-padding-vertical-base @input-padding-horizontal-base;
+  color: @input-color;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  background-color: @input-bg;
+  background-image: none;
+  border: @border-width-base @border-style-base @input-border-color;
+  border-radius: @border-radius-base;
+  transition: all 0.3s;
+  .placeholder(); 
+
+  &:hover {
+    .hover();
+  }
+
+  &:focus {
+    .active();
+  }
+
+  &-disabled {
+    .disabled();
+  }
+
+  &[disabled] {
+    .disabled();
+  }
+
+  // Reset height for `textarea`s
+  textarea& {
+    max-width: 100%; // prevent textearea resize from coming out of its container
+    height: auto;
+    min-height: @input-height-base;
+    line-height: @line-height-base;
+    vertical-align: bottom;
+    transition: all 0.3s, height 0s;
+  }
+
+}

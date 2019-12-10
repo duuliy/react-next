@@ -27,6 +27,8 @@ export default class Input extends PureComponent {
     }
 
     static propTypes = {
+        id: PropTypes.string,
+        maxLength: PropTypes.number,
         placeholder: PropTypes.oneOfType([
             PropTypes.element,
             PropTypes.string,
@@ -75,16 +77,22 @@ export default class Input extends PureComponent {
     };
 
     render() {
-        return ( <input
-            // {...otherProps}
-            // onChange={this.handleChange}
-            // onKeyDown={this.handleKeyDown}
-            // className={classNames(getInputClassName(prefixCls, size, disabled), {
-            //   [className!]: className && !addonBefore && !addonAfter,
-            // })}
-            ref = {
-                this.saveInput
-            }
+        const {
+            placeholder,
+            maxLength,
+            readonly,
+            type
+        }=this.props
+        return ( 
+        <input
+            className={this.state.prefixCls}
+            placeholder={placeholder}
+            maxLength={maxLength}
+            readOnly={readonly}
+            type={type}
+            value={value}
+            onChange={this._onChange}
+            ref = {this.saveInput}
             />
         )
     }
