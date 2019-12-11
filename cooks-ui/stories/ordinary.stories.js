@@ -1,8 +1,8 @@
 import React from 'react'
 import message from '../components/message'
 import Button from '../components/button'
+import Upload from '../components/upload'
 import { storiesOf } from '@storybook/react'
-// import './styles/button.less'
 
 storiesOf('通用', module)
   .add(
@@ -25,6 +25,13 @@ storiesOf('通用', module)
           warning
         </Button>
 
+      </div>
+    )
+  ).add(
+    'Upload',
+    ()=>(
+      <div>
+        <Upload />
       </div>
     )
   )

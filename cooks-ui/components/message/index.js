@@ -63,6 +63,7 @@ export default class Message extends PureComponent {
   }
   destroy = () => {
     if (this._containerRef) {
+      //销毁这个创建的dom
       ReactDOM.unmountComponentAtNode(this._containerRef);
     }
     if (this._currentNodeRef) {
