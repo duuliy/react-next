@@ -18,6 +18,9 @@
 @component-background: #fff;
 @control-padding-horizontal: @padding-sm;
 @border-radius-base: 4px;
+@default-shadow: 0 4px 22px 0 rgba(15, 35, 95, 0.12);
+@default-section-shadow: 0 1px 4px 0 rgba(15, 35, 95, 0.12);
+@default-text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
 
 
 
@@ -62,6 +65,21 @@
 @button-box-shadow: 0 2px 0 rgba(15, 35, 95, .02);
 @button-disabled-opacity: .5;
 
+
+//message 消息提示
+@message-show-time: @animate-time;
+@message-theme-dark-bg:fade(#fff, 35%);
+@message-theme-light-bg: #fff;
+@message-theme-dark-font-color: #fff;
+@message-z-index: 999;
+@message-width: 500px;
+@message-height: 30px;
+@message-width-sm: 200px;
+@message-padding: 0 25px;
+@message-title-size: 14px;
+@message-title-size-sm: 12px;
+@message-icon-font-size: 15px;
+@message-icon-font-size-sm: 5px;
 
 // Border color
 @border-color-base: hsv(0, 0, 85%);
@@ -129,3 +147,11 @@
 @ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
 @ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 @ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+@animate-time : .5s;
+@animate-type: cubic-bezier(0.165, 0.84, 0.44, 1);
+@animate-type-easy-in-out: cubic-bezier(.9, .25, .08, .83);
+
+
+// 响应式断点
+@media-screen-xs-max : 576px;
+@mobile: ~ "screen and (max-width: @{media-screen-xs-max})";
