@@ -21,7 +21,42 @@
 @default-shadow: 0 4px 22px 0 rgba(15, 35, 95, 0.12);
 @default-section-shadow: 0 1px 4px 0 rgba(15, 35, 95, 0.12);
 @default-text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+@text-color-secondary: fade(@black, 45%);
 
+
+//font size
+@font-size-sm: 12px;
+
+// Shadow
+@shadow-color: rgba(0, 0, 0, 0.15);
+@shadow-color-inverse: @component-background;
+@box-shadow-base: @shadow-1-down;
+@shadow-1-up: 0 -2px 8px @shadow-color;
+@shadow-1-down: 0 2px 8px @shadow-color;
+@shadow-1-left: -2px 0 8px @shadow-color;
+@shadow-1-right: 2px 0 8px @shadow-color;
+@shadow-2: 0 4px 12px @shadow-color;
+
+
+// z-index list, order by `z-index`
+@zindex-table-fixed: auto;
+@zindex-affix: 10;
+@zindex-back-top: 10;
+@zindex-badge: 10;
+@zindex-picker-panel: 10;
+@zindex-popup-close: 10;
+@zindex-modal: 1000;
+@zindex-modal-mask: 1000;
+@zindex-message: 1010;
+@zindex-notification: 1010;
+@zindex-popover: 1030;
+@zindex-dropdown: 1050;
+@zindex-picker: 1050;
+@zindex-tooltip: 1060;
+
+// list items or table cells.
+@item-active-bg: @primary-color;
+@item-hover-bg: @primary-color;
 
 
 // Disabled states
@@ -41,12 +76,22 @@
 @default-color: #d9d9d9;
 @disabled-color: #f5f5f5;
 @disabled-color-font: @font-color;
+@icon-color: inherit;
+@black: #000;
 
 
 // Outline
 @outline-blur-size: 0;
 @outline-width: 2px;
 @outline-color: @primary-color;
+
+@background-color-light: hsv(0, 0, 98%); // background of header and selected item
+@background-color-base: hsv(0, 0, 96%); // Default grey background color
+
+// Tag
+@tag-default-bg: @background-color-light;
+@tag-default-color: @text-color;
+@tag-font-size: @font-size-sm;
 
 
 //Button 按钮
@@ -118,11 +163,14 @@
 @input-disabled-bg: @disabled-bg;
 @input-outline-offset: 0 0;
 
+
 // Select
 // ---
 @select-border-color: @border-color-base;
 @select-item-selected-font-weight: 600;
 @select-dropdown-bg: @component-background;
+@select-item-selected-bg: @background-color-light;
+@select-item-active-bg: @item-active-bg;
 @select-background: @component-background;
 
 
