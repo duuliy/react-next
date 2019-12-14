@@ -18,7 +18,8 @@
     "react-icons": "^3.3.0",
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
-    "rc-select": "~9.2.0"
+    "rc-select": "~9.2.0",
+    "rc-calendar": "~9.15.7"
   },
   "scripts": {
     "start": "react-scripts start",

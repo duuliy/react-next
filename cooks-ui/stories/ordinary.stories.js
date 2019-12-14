@@ -3,6 +3,7 @@ import message from '../components/message'
 import Button from '../components/button'
 import Upload from '../components/upload'
 import Select from '../components/select'
+import DatePicker from '../components/datepicker'
 import { storiesOf } from '@storybook/react'
 
 const beforeUpload = () => {
@@ -16,18 +17,18 @@ const _onChange = (file, fileList, e) => {
   console.log(e)
 }
 
-const onBlur = (e)=>{
+const onBlur = (e) => {
   console.log('失去焦点', e)
 }
 
-const onFocus = (e)=>{
+const onFocus = (e) => {
   console.log('获得焦点', e)
 }
-const onSearch = (e)=>{
+const onSearch = (e) => {
   console.log(e)
 }
 
-const onSelect = (e)=>{
+const onSelect = (e) => {
   console.log(e)
 }
 
@@ -81,7 +82,7 @@ storiesOf('通用', module)
     )
   ).add(
     'Select',
-    ()=>(
+    () => (
       <div>
         <Select style={{ width: 120 }} placeholder='请选择'>
           <Select.Option value="lucy" >lucy</Select.Option>
@@ -107,6 +108,13 @@ storiesOf('通用', module)
           <Select.Option value="lucy2">lucy2</Select.Option>
           <Select.Option value="lucy3">lucy3</Select.Option>
         </Select>
+      </div>
+    )
+  ).add(
+    'DatePicker  日期',
+    () => (
+      <div>
+        <DatePicker />
       </div>
     )
   )
