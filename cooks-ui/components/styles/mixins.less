@@ -3,11 +3,13 @@
 
 .clearfix() {
   zoom: 1;
+
   &::before,
   &::after {
     display: table;
     content: '';
   }
+
   &::after {
     clear: both;
   }
@@ -31,7 +33,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  > * {
+  >* {
     line-height: 1;
   }
 
@@ -51,7 +53,7 @@
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
   border-color: @color;
-  border-right-width: @border-width-base !important;
+  border-right-width: @border-width-base  !important;
 }
 
 .btn {
@@ -61,13 +63,14 @@
   line-height: 100%;
   font-size: @button-default-font-size;
   padding: @button-default-padding;
-  border:1px solid @default-color;
+  border: 1px solid @default-color;
   cursor: pointer;
   text-align: center;
   overflow: hidden;
   position: relative;
   transition: .3s;
   border-radius: 5px;
+
   :after {
     content: '';
     position: absolute;
@@ -80,10 +83,11 @@
     transform: translate(-50%, -50%)
   }
 
-  :hover{
+  :hover {
     opacity: @button-disabled-opacity;
   }
-  :active:after{
+
+  :active:after {
     animation: ripple .3s;
   }
 }
@@ -103,15 +107,18 @@
 
 // Placeholder text
 .placeholder(@color: @input-placeholder-color) {
+
   // Firefox
   &::-moz-placeholder {
     color: @color;
     opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
   }
+
   // Internet Explorer 10+
   &:-ms-input-placeholder {
     color: @color;
   }
+
   // Safari and Chrome
   &::-webkit-input-placeholder {
     color: @color;
@@ -125,14 +132,14 @@
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
   border-color: @color;
-  border-right-width: @border-width-base !important;
+  border-right-width: @border-width-base  !important;
 }
 
 // input status
 // == when focus or actived
 .active(@color: @outline-color) {
-  border-color: rgba(0,0,0,.3);
-  border-right-width: @border-width-base !important;
+  border-color: rgba(0, 0, 0, .3);
+  border-right-width: @border-width-base  !important;
   outline: 0;
   box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@color, 20%);
 }
@@ -163,7 +170,7 @@
   border: @border-width-base @border-style-base @input-border-color;
   border-radius: @border-radius-base;
   transition: all 0.3s;
-  .placeholder(); 
+  .placeholder();
 
   &:hover {
     .hover();
@@ -191,4 +198,17 @@
     transition: all 0.3s, height 0s;
   }
 
+}
+
+
+.make-grid-columns(@n) when (@n <=@grid-columns) {
+  &-@{n} {
+    width: @n / @grid-columns * @grid-row-width;
+  }
+
+  &-offset-@{n} {
+    margin-left: @n / @grid-columns * @grid-row-width;
+  }
+
+  .make-grid-columns(@n + 1);
 }

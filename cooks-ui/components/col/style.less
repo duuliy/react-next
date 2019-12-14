@@ -1,0 +1,10 @@
+@import "../styles/themes.less";
+@import "../styles/app.less";
+@import "../styles/mixins.less";
+
+@prefixCls : cooks-col;
+
+.@{prefixCls} {
+  display: inline-block;
+  .make-grid-columns(1);
+}

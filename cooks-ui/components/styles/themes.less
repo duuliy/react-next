@@ -1,20 +1,18 @@
-
-
 // vertical paddings
-@padding-lg: 24px; 
-@padding-md: 16px; 
-@padding-sm: 12px; 
-@padding-xs: 8px; 
+@padding-lg: 24px;
+@padding-md: 16px;
+@padding-sm: 12px;
+@padding-xs: 8px;
 
 @text-color: fade(black, 65%);
-@font-size:14px;
+@font-size: 14px;
 @font-size-base: 14px;
 @font-variant-base: tabular-nums;
 @line-height-base: 1.5;
 @font-feature-settings-base: 'tnum';
-@font-color:rgba(0, 0, 0, .25);
+@font-color: rgba(0, 0, 0, .25);
 @border-radius-sm: 2px;
-@background-color-base: hsv(0, 0, 96%); 
+@background-color-base: hsv(0, 0, 96%);
 @component-background: #fff;
 @control-padding-horizontal: @padding-sm;
 @border-radius-base: 4px;
@@ -65,11 +63,11 @@
 @disabled-bg: @background-color-base;
 @disabled-color-dark: fade(#fff, 35%);
 @btn-disable-color: @disabled-color;
-@btn-disable-border:@border-color-base;
+@btn-disable-border: @border-color-base;
 
 // color
-@primary-color:#1890ff;
-@danger-color:#ff4d4f;
+@primary-color: #1890ff;
+@danger-color: #ff4d4f;
 @warning-color: #fca130;
 @success-color: #35C613;
 @info-color: #61affe;
@@ -78,6 +76,7 @@
 @disabled-color-font: @font-color;
 @icon-color: inherit;
 @black: #000;
+@border-color: #e8e8e8;
 
 
 // Outline
@@ -113,7 +112,7 @@
 
 //message 消息提示
 @message-show-time: @animate-time;
-@message-theme-dark-bg:fade(#fff, 35%);
+@message-theme-dark-bg: fade(#fff, 35%);
 @message-theme-light-bg: #fff;
 @message-theme-dark-font-color: #fff;
 @message-z-index: 999;
@@ -128,10 +127,10 @@
 
 // Border color
 @border-color-base: hsv(0, 0, 85%);
-@border-color-split: hsv(0, 0, 91%); 
+@border-color-split: hsv(0, 0, 91%);
 @border-color-inverse: white;
-@border-width-base: 1px; 
-@border-style-base: solid; 
+@border-width-base: 1px;
+@border-style-base: solid;
 
 
 // Checkbox
@@ -203,3 +202,9 @@
 // 响应式断点
 @media-screen-xs-max : 576px;
 @mobile: ~ "screen and (max-width: @{media-screen-xs-max})";
+
+
+// Grid system
+@grid-columns: 24;
+@grid-row-width : 100%;
+@grid-gutter-width: 0;
