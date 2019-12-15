@@ -34,6 +34,31 @@ const onSelect = (e) => {
   console.log(e)
 }
 
+const columns = [{
+  title: 'Name', dataIndex: 'name', key: 'name', width: 100
+}, {
+  title: 'Age', dataIndex: 'age', key: 'age', width: 100
+}, {
+  title: 'Address', dataIndex: 'address', key: 'address', width: 200
+}, {
+  title: 'Operations', dataIndex: '', key: 'operations', render: () => <a href="#">Delete</a>
+}]
+
+let data = []
+
+for (let i = 0; i < 200; i++) {
+  let data2 = { name: 'Jack', age: i, address: 'some where', key: i }
+  data.push(data2)
+}
+
+let current = 1
+let pageSize = 20
+
+const tableOnChange = (current, pageSize) => {
+  current = current
+  pageSize = pageSize
+}
+
 storiesOf('通用', module)
   .add(
     'Message',
@@ -123,8 +148,13 @@ storiesOf('通用', module)
     'table  表格',
     () => (
       <div>
-        <Table />
-        <Pagination />
+        <Table
+          columns={columns}
+          data={data}
+          current={current}
+          total={200}
+          onChang={tableOnChange}
+        />
       </div>
     )
   )

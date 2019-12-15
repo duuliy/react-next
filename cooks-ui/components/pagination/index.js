@@ -24,13 +24,16 @@ export default class Pagination extends PureComponent {
 
   render() {
     const { prefixCls } = this.state
+    const {
+      className,
+      ...otherProps
+    } = this.props
     return (
-      <div>
-        666
-        <RcPagination
-          prefixCls={prefixCls}
-        />
-      </div>
+      <RcPagination
+        prefixCls={prefixCls}
+        {...otherProps}
+        className={cls(className)}
+      />
     )
   }
 }
