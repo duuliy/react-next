@@ -4,6 +4,8 @@ import Button from '../components/button'
 import Upload from '../components/upload'
 import Select from '../components/select'
 import DatePicker from '../components/datepicker'
+import Table from '../components/table'
+import Pagination from '../components/pagination'
 import { storiesOf } from '@storybook/react'
 
 const beforeUpload = () => {
@@ -115,6 +117,14 @@ storiesOf('通用', module)
     () => (
       <div>
         <DatePicker />
+      </div>
+    )
+  ).add(
+    'table  表格',
+    () => (
+      <div>
+        <Table />
+        <Pagination />
       </div>
     )
   )

@@ -4,4 +4,27 @@
 
 @prefixCls : cooks-datepicker;
 
-.@{prefixCls} {}
+.@{prefixCls} {
+
+  .@{prefixCls}-range-picker-input {
+    width: 44%;
+    height: 99%;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    .placeholder();
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+  &-today :not(.@{prefixCls}-disabled-cell) :not(.@{prefixCls}-last-month-cell) :not(.@{prefixCls}-next-month-btn-day) {
+    .@{prefixCls}-date {
+      color: @primary-color;
+      background: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}

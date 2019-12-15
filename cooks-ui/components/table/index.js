@@ -2,18 +2,15 @@ import React, {
   PureComponent
 } from 'react'
 import './style.less'
-
+import RcTable, { INTERNAL_COL_DEFINE } from 'rc-table'
 import cls from 'classnames'
-import Calendar from 'rc-calendar'
-import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
-import RcDatePicker from 'rc-calendar/lib/Picker';
 import PropTypes from 'prop-types'
 
-export default class DatePicker extends PureComponent {
+export default class Table extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      prefixCls: "cooks-datepicker"
+      prefixCls: "cooks-table"
     }
   }
 
@@ -28,15 +25,10 @@ export default class DatePicker extends PureComponent {
     const { prefixCls } = this.state
     return (
       <div>
-        <Calendar
+        777
+        <RcTable
           prefixCls={prefixCls}
         />
-        <RangeCalendar
-          prefixCls={prefixCls}
-        />
-        {/* <RcDatePicker
-          prefixCls={prefixCls}
-        /> */}
       </div>
     )
   }
