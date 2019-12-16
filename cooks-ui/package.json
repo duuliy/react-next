@@ -21,7 +21,8 @@
 		"rc-select": "~9.2.0",
 		"rc-calendar": "~9.15.7",
 		"rc-pagination": "~1.20.11",
-		"rc-table": "~6.10.5"
+		"rc-table": "~6.10.5",
+		"rc-form": "^2.4.10"
 	},
 	"scripts": {
 		"start": "react-scripts start",
