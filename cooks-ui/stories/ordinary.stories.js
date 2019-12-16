@@ -148,12 +148,22 @@ storiesOf('通用', module)
     'table  表格',
     () => (
       <div>
+        <h2>普通</h2>
         <Table
           columns={columns}
           data={data}
           current={current}
           total={200}
           onChang={tableOnChange}
+        />
+        <h2>滚动</h2>
+        <Table
+          columns={columns}
+          data={data}
+          current={current}
+          total={200}
+          onChang={tableOnChange}
+          scroll={{ y: 200 }}
         />
       </div>
     )

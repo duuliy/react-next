@@ -12,21 +12,20 @@ export default class Table extends PureComponent {
     super(props)
     this.state = {
       prefixCls: "cooks-table",
-      current: 1,
+      current: null,
       dataSource: []
     }
   }
 
   static defaultProps = {
     defaultCurrent: 1,
-    defaultPageSize: 20,
-    pageSize: 20,
+    defaultPageSize: 10,
+    pageSize: 10,
     total: 0,
     onChange: () => { }
   }
 
   static propTypes = {
-    // current: PropTypes.number,
     defaultCurrent: PropTypes.number,
     defaultPageSize: PropTypes.number,
     pageSize: PropTypes.number,
@@ -34,7 +33,8 @@ export default class Table extends PureComponent {
     onChange: PropTypes.func,
     onShowSizeChange: PropTypes.func,
     columns: PropTypes.array,
-    data: PropTypes.array
+    data: PropTypes.array,
+    scroll:PropTypes.object
   }
   //   current	当前页数	number	-	
   // defaultCurrent	默认的当前页数	number	1	
@@ -55,35 +55,36 @@ export default class Table extends PureComponent {
       current,
       dataSource
     } = this.state
+    //更多属性参考rc-table
     const {
-      // current,
+      className,
+      scroll,
       defaultCurrent,
       defaultPageSize,
-      pageSize,
       total,
       onChange,
       onShowSizeChange,
-      columns,
-      data
+      columns
     } = this.props
-    console.log(dataSource)
     return (
-      <div>
+      <div className={cls(className,prefixCls+'-wrap')}>
         <RcTable
           prefixCls={prefixCls}
           columns={columns}
           data={dataSource}
+          scroll={scroll}
         />
 
         <Pagination
-          current={current}
+          current={current||defaultCurrent}
           total={total}
           onChange={this._onChange}
         />
       </div>
     )
   }
-  static getDerivedStateFromProps({ pageSize, data }, { current }) {
+  static getDerivedStateFromProps({ pageSize, data, defaultCurrent }, { current }) {
+    current=current||defaultCurrent
     if (current) {
       const nextNum = (current * pageSize).toFixed()
       const prevNum = (nextNum - pageSize).toFixed()
