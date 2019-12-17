@@ -5,7 +5,7 @@ import Upload from '../components/upload'
 import Select from '../components/select'
 import DatePicker from '../components/datepicker'
 import Table from '../components/table'
-import Form from '../components/form'
+import FormDemo from './components/FormDemo'
 import { storiesOf } from '@storybook/react'
 
 const beforeUpload = () => {
@@ -57,10 +57,6 @@ let pageSize = 20
 const tableOnChange = (current, pageSize) => {
   current = current
   pageSize = pageSize
-}
-
-const fffonSubmit = (e)=>{
-  console.log(e)
 }
 
 storiesOf('通用', module)
@@ -176,9 +172,7 @@ storiesOf('通用', module)
     () => (
       <div>
         <h2>普通</h2>
-        <Form onSubmit={fffonSubmit}>
-          <button type='submit'>666</button>
-        </Form>
+        <FormDemo/>
       </div>
     )
   )

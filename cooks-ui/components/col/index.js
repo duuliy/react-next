@@ -19,10 +19,12 @@ export default class Col extends PureComponent {
     order: 0,
     pull: 0,
     push: 0,
-    span: 24
+    span: 24,
+    gutter:24
   }
 
   static propTypes = {
+    gutter:PropTypes.number,
     offset: PropTypes.number,
     order: PropTypes.number,
     pull: PropTypes.number,
@@ -65,8 +67,8 @@ export default class Col extends PureComponent {
 
     return (
       <RowContext.Consumer>
-        {({ gutter }) => {
-          console.log(gutter)
+        {({ gutter=24 }) => {
+          // gutter  antd用了  我暂时没用
           return (
             <div
               className={classes}
