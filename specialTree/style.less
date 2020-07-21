@@ -1,0 +1,103 @@
+@PrefixCls: SetRules;
+
+.@{PrefixCls} {
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: scroll;
+    height: 600px;
+
+    //画线是组合 不是单个
+    .selectGroup {
+        display: flex;
+        padding-left: 80px;
+        align-items: center;
+        margin: 0 0 20px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background: #98ACD9;
+            left: 48px;
+        }
+
+        &:first-child {
+            &::before {
+                top: calc(~'50% - 12px') !important;
+                height: calc(~'50% + 32px');
+            }
+        }
+
+        &:last-child {
+            &::before {
+                top: calc(~'-50% - 11px');
+                height: calc(~'100% + 1px');
+            }
+        }
+
+        &_head {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 20px;
+                background-color: #98ACD9;
+                top: 15px;
+                right: calc(~'100% + 10px');
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-top: 3px solid transparent;
+                border-left: 6px solid #98ACD9;
+                border-bottom: 3px solid transparent;
+                top: 13px;
+                left: -10px;
+            }
+
+            span {
+                cursor: pointer;
+                display: block;
+            }
+        }
+
+        &_cont {
+            &_contCol {
+                display: flex;
+                padding-left: 80px;
+                margin: 0 0 5px 0;
+
+                .addAndDel {
+                    span {
+                        display: inline-block;
+                        cursor: pointer;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .selectGroupLine{
+        &::before {
+            content: none;   
+        }
+        >.selectGroup_head {
+            position: relative;
+            &::before {
+                content: none;
+            }
+
+            &::after {
+                content:none;
+            }
+        }
+    }
+}
