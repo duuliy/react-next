@@ -206,16 +206,16 @@ function ChildInputComponent(props, ref) {
   FancyInput = forwardRef(FancyInput);
 
 //useContext可以订阅React context而不用引入嵌套  获取上下文的传的props
-//useReducer则允许你使用一个reducer来管理一个复杂组件的局部状态（local state)
+//useReducer则允许你使用一个reducer来管理一个复杂组件的局部状态（local state)，接受可选的第三个参数 initialAction 。如果提供，则在初始渲染期间应用初始操作相当于是reducer其中一个初始化运行了
 // const [todos, dispatch] = useReducer(todosReducer);
 //useCallback 记忆函数
-//useMemo 记忆组件  可以替代useCallback
+//useMemo 记忆组件  可以替代useCallback  用于包含组件，确定有指定的值（第二个参数）改变才会渲染。
 //useCallback 不会执行第一个参数函数，而是将它返回给你，而 useMemo 会执行第一个函数并且将函数执行结果返回给你。
 //useRef 保存引用值
-//useImperativeHandle 透传 Ref  用于让父组件获取子组件内的索引
+//useImperativeHandle 让父组件可以调用子组件内useImperativeHandle钩子的方法
 //useImperativeMethods 同上
 //useLayoutEffect 同步执行副作用
-//useMutationEffect 但它在React执行其DOM突变的同一阶段同步触发，然后更新兄弟组件。使用它来执行自定义DOM突变。useEffect尽可能优先选择标准，以避免阻止视觉更新
+//forwardRef 让父调子时，不用改变原组件，直接增加第二个参数ref，也可以在封装后的函数上直接使用ref
 //缺点：但是当下 v16.8 的版本中，还无法实现 getSnapshotBeforeUpdate 和 componentDidCatch 这两个在类组件中的生命周期函数。
 
 export default Example;
