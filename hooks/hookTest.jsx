@@ -216,6 +216,7 @@ function ChildInputComponent(props, ref) {
 //useImperativeMethods 同上
 //useLayoutEffect 同步执行副作用
 //forwardRef 让父调子时，不用改变原组件，直接增加第二个参数ref，也可以在封装后的函数上直接使用ref
+// useDebugValue
 //缺点：但是当下 v16.8 的版本中，还无法实现 getSnapshotBeforeUpdate 和 componentDidCatch 这两个在类组件中的生命周期函数。
 
 export default Example;
