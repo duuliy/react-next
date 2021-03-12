@@ -117,7 +117,7 @@ function render(element, container) {
     props: {
       children: [element]
     },
-    alternate: currentRoot //alternate上一次改变了哪些fiber的信息
+    alternate: currentRoot //alternate指向下一次在内存中生成的fiber树
   };
   deletions = [];
   nextUnitOfWork = wipRoot;
@@ -291,4 +291,4 @@ Didact.render(element, container);
 //5. 对比前后fiber，并标记
 //6. 按标记处理5的结果
 //7. 分别处理函数组件与class组件
-//8. 钩子
+//8. 钩子 
