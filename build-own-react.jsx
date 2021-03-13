@@ -231,7 +231,7 @@ function reconcileChildren(wipFiber, elements) {  //diff dfs对比前后fiber
         dom: oldFiber.dom,
         parent: wipFiber,
         alternate: oldFiber,
-        effectTag: "UPDATE"
+        effectTag: "UPDATE"  //要执行的dom操作类型
       };
     }
     if (element && !sameType) { //如果类型不同，且有新的元素，执行：标记创建新节点
