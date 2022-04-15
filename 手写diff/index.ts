@@ -15,3 +15,12 @@ console.log(diff(before, after));
 //   {key: 'd'}
 // ]
 
+// // 更新前
+// const before = [
+//   {key: 'a'},
+//   {key: 'b'}
+// ]
+// // 更新后
+// const after = [
+//   {key: 'b'}
+// ]
