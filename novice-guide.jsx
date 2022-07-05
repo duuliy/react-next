@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { Button } from 'antd'
 import { throttle } from 'lodash'
-import styles from './style.module.scss'
+import styles from './guid-style.module.scss'
 
 const Guide = ({ targetSelector, children, goNext, closeGuide }) => {
   const [targetNodeImStyle, setTargetNodeImStyle] = useState({})

@@ -1,0 +1,57 @@
+.guide {
+  box-sizing: content-box;
+  position: absolute;
+  z-index: 999998;
+  opacity: 1;
+  box-shadow: rgba(33, 33, 33, 0.5) 0px 0px 0px 5000px;
+}
+
+.guideWrap {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+  box-sizing: content-box;
+  z-index: 999997;
+  inset: 0px;
+  opacity: 0;
+}
+
+.guideTooltip {
+  box-sizing: content-box;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  min-width:210px;
+  min-height: 72px;
+  padding: 8px 12px;
+  background-color: #16B979;
+  color: white;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 0.5em 3em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:-9px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #16B979;
+    width: 0;
+    height: 0;
+  }
+
+  .guideFooter{
+    position: absolute;
+    width: calc(100% - 24px);
+    bottom: 8px;
+    display: flex;
+    flex-direction:row-reverse;
+  }
+}
