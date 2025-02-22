@@ -1,5 +1,6 @@
 # react + 模块联邦 + 嵌套打包
 这个例子证明react是可以嵌套打包的
+fe3=>fe2=>fe1
 
 ## How to run
 
